@@ -101,16 +101,16 @@ class RMCharacter extends HTMLElement {
         let data = await fetch("https://rickandmortyapi.com/api/character/?name=" + this.name)
         let { results } = await data.json()
         // create html elements div, img, h3
-        const warpper = document.createElement("div")
+        const wrapper = document.createElement("div")
         const img = document.createElement("img")
         const name = document.createElement("h3")
         // set values to our html elements
         img.setAttribute("src", results[0].image)
         name.innerText = results[0].name
-        warpper.appendChild(name)
-        warpper.appendChild(img)
+        wrapper.appendChild(name)
+        wrapper.appendChild(img)
         // add everything to the root shadowDOM
-        this.shadowDOM.appendChild(warpper)
+        this.shadowDOM.appendChild(wrapper)
     }
 
     // lifecycle method to catch changes of attributes
